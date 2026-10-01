@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: king-barbearia
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /api/services
+    envVars:
+      - key: PORT
+        value: 3000
+      - key: NODE_ENV
+        value: production
+      - key: ADMIN_USER
+        value: admin
+      - key: ADMIN_PASSWORD
+        generateValue: true
+      - key: BUSINESS_TZ
+        value: America/Campo_Grande
+      - key: DATA_DIR
+        value: /data
+    disk:
+      name: king-data
+      mountPath: /data
+      sizeGB: 1

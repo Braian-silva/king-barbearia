@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Painel — King Barbearia</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+        <a href="/" aria-label="Página inicial">
+            <img src="logo.png" class="logo" alt="King Barbearia">
+        </a>
+
+        <a class="adminlink" href="/">← Voltar para o site</a>
+    </header>
+
+    <main>
+        <section>
+            <h1>Painel do barbeiro</h1>
+            <p class="muted">Consulte e gerencie os agendamentos da barbearia. Deixe a data vazia para visualizar todos.</p>
+
+            <form id="login" class="box login">
+                <label for="user">Usuário</label>
+                <input id="user" name="user" type="text" placeholder="Usuário" autocomplete="username" required>
+
+                <label for="pass">Senha</label>
+                <input id="pass" name="pass" type="password" placeholder="Senha" autocomplete="current-password" required>
+
+                <label for="adminDate">Filtrar por data</label>
+                <input id="adminDate" name="adminDate" type="date">
+
+                <button class="btn" type="submit">Entrar / atualizar</button>
+            </form>
+
+            <div id="list" class="box" aria-live="polite"></div>
+        </section>
+    </main>
+
+    <script src="admin.js"></script>
+</body>
+
+</html>

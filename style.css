@@ -1,0 +1,478 @@
+/* =========================================================
+   VARIÁVEIS
+========================================================= */
+
+:root {
+    --bg: #0b0d0f;
+    --bg-2: #161a1d;
+    --panel: #11171a;
+    --panel-soft: #171d21;
+    --gold: #d7b06c;
+    --gold-soft: #f2d49a;
+    --accent: #c88a32;
+    --ink: #f5f2ed;
+    --muted: #c6b9a8;
+    --line: #2a2b2d;
+    --success: #4cc38a;
+    --danger: #ff7a7a;
+    --shadow: rgba(0, 0, 0, 0.3);
+}
+
+
+/* =========================================================
+   RESET / BASE
+========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background:
+        radial-gradient(circle at top, rgba(215, 176, 108, 0.14), transparent 28%),
+        linear-gradient(180deg, #0a0b0d 0%, #101518 100%);
+    color: var(--ink);
+    font-family: Arial, sans-serif;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+
+/* =========================================================
+   CABEÇALHO
+========================================================= */
+
+header {
+    height: 82px;
+    border-bottom: 1px solid var(--line);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 7%;
+    position: sticky;
+    top: 0;
+    background: rgba(12, 14, 16, 0.88);
+    backdrop-filter: blur(12px);
+    z-index: 5;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+.logo {
+    height: 58px;
+    width: auto;
+    max-width: 220px;
+    object-fit: contain;
+    filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.18));
+}
+
+
+/* =========================================================
+   NAVEGAÇÃO
+========================================================= */
+
+nav a,
+.adminlink {
+    color: #f5eee3;
+    text-decoration: none;
+    margin-left: 25px;
+    font-size: 14px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+nav a:hover,
+.adminlink:hover {
+    color: var(--gold-soft);
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 560px;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 80px 20px 60px;
+}
+
+.badge {
+    display: inline-block;
+    border: 1px solid rgba(215, 176, 108, 0.5);
+    color: var(--gold-soft);
+    background: rgba(215, 176, 108, 0.06);
+    padding: 9px 16px;
+    border-radius: 999px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    font-size: clamp(46px, 7vw, 88px);
+    line-height: 0.96;
+    letter-spacing: -4px;
+    margin: 25px 0 18px;
+    text-transform: uppercase;
+}
+
+.hero h1 b {
+    color: var(--gold-soft);
+}
+
+.hero p {
+    color: var(--muted);
+    font-size: 18px;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   BOTÕES
+========================================================= */
+
+.btn {
+    display: inline-block;
+    border: 0;
+    background: linear-gradient(135deg, var(--gold) 0%, var(--accent) 100%);
+    color: #17110b;
+    padding: 14px 24px;
+    border-radius: 12px;
+    font-weight: 900;
+    cursor: pointer;
+    text-decoration: none;
+    margin-top: 24px;
+    transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 10px 24px rgba(215, 176, 108, 0.22);
+}
+
+.btn:hover {
+    filter: brightness(1.08);
+    transform: translateY(-1px);
+}
+
+
+/* =========================================================
+   SEÇÕES
+========================================================= */
+
+section {
+    max-width: 1180px;
+    margin: auto;
+    padding: 65px 7%;
+}
+
+h1,
+h2,
+h3 {
+    margin-top: 0;
+}
+
+h2 {
+    font-size: clamp(28px, 4vw, 40px);
+    margin-bottom: 8px;
+}
+
+.muted {
+    color: var(--muted);
+}
+
+
+/* =========================================================
+   CARDS / GRID
+========================================================= */
+
+.cards,
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.grid {
+    grid-template-columns: 1.4fr 0.8fr;
+}
+
+.card,
+.box {
+    background: linear-gradient(180deg, rgba(24, 29, 32, 1), rgba(14, 17, 20, 1));
+    border: 1px solid var(--line);
+    border-radius: 18px;
+    padding: 24px;
+    box-shadow: 0 18px 40px rgba(0, 0, 0, 0.16);
+}
+
+.card h3 {
+    margin-bottom: 12px;
+    color: var(--gold-soft);
+}
+
+.card .price {
+    font-size: 28px;
+    color: var(--gold-soft);
+    font-weight: 900;
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   AGENDA / HORÁRIOS
+========================================================= */
+
+.times {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-top: 18px;
+}
+
+.slot {
+    padding: 14px;
+    border: 1px solid #2f3438;
+    border-radius: 10px;
+    background: #0b1014;
+    color: var(--ink);
+    cursor: pointer;
+    transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease, transform 0.15s ease;
+}
+
+.slot:hover,
+.slot.selected {
+    border-color: var(--gold);
+    color: var(--gold-soft);
+    background: rgba(215, 176, 108, 0.08);
+    transform: translateY(-1px);
+}
+
+.slot.off {
+    opacity: 0.4;
+    cursor: not-allowed;
+    text-decoration: line-through;
+}
+
+.slot:disabled {
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   FORMULÁRIOS
+========================================================= */
+
+label {
+    display: block;
+    margin: 16px 0 7px;
+    color: #e8e2d7;
+    font-size: 13px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid #2a2f32;
+    border-radius: 10px;
+    background: #0b0e10;
+    color: var(--ink);
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: var(--gold);
+    box-shadow: 0 0 0 2px rgba(215, 176, 108, 0.15);
+}
+
+
+/* =========================================================
+   MENSAGENS
+========================================================= */
+
+.msg {
+    min-height: 20px;
+    margin-top: 18px;
+}
+
+.success {
+    color: var(--success);
+}
+
+.error {
+    color: var(--danger);
+}
+
+
+/* =========================================================
+   INFORMAÇÕES
+========================================================= */
+
+.info p {
+    color: #dfe5e7;
+}
+
+hr {
+    border: 0;
+    border-top: 1px solid var(--line);
+    margin: 22px 0;
+}
+
+
+/* =========================================================
+   RODAPÉ
+========================================================= */
+
+footer {
+    text-align: center;
+    border-top: 1px solid var(--line);
+    padding: 35px;
+    color: #a9adad;
+    background: rgba(10, 12, 13, 0.7);
+}
+
+
+/* =========================================================
+   LOGIN DO PAINEL
+========================================================= */
+
+.login {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.login input {
+    flex: 1;
+    min-width: 160px;
+}
+
+
+/* =========================================================
+   LISTA DE AGENDAMENTOS
+========================================================= */
+
+.row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--line);
+    padding: 15px 0;
+    gap: 15px;
+}
+
+.row.is-cancelled {
+    opacity: 0.55;
+}
+
+
+/* =========================================================
+   TAG DE CANCELAMENTO
+========================================================= */
+
+.row .tag {
+    display: inline-block;
+    margin-left: 8px;
+    font-size: 11px;
+    color: #ffb0b0;
+    border: 1px solid #4d2529;
+    border-radius: 999px;
+    padding: 2px 8px;
+}
+
+
+/* =========================================================
+   BOTÕES DO PAINEL
+========================================================= */
+
+.cancel {
+    background: #241214;
+    color: #ff8585;
+    border: 1px solid #4d2529;
+    padding: 8px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.cancel:hover {
+    background: #35191c;
+}
+
+.reactivate {
+    background: #0f2418;
+    color: #54e28c;
+    border: 1px solid #1f4a30;
+    padding: 8px 12px;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.reactivate:hover {
+    background: #14331f;
+}
+
+
+/* =========================================================
+   WHATSAPP
+========================================================= */
+
+a.wa {
+    color: var(--gold-soft);
+    text-decoration: none;
+}
+
+a.wa:hover {
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 760px) {
+
+    header {
+        padding: 0 5%;
+    }
+
+    nav {
+        display: none;
+    }
+
+    .cards,
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .times {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    section {
+        padding: 50px 5%;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .row {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="King Barbearia — agende seu corte, barba e estilo com praticidade.">
+    <meta name="theme-color" content="#0b0d0f">
+
+    <title>King Barbearia | Agendamento</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header>
+
+        <a href="/" aria-label="Página inicial">
+            <img
+                src="logo.png"
+                class="logo"
+                alt="King Barbearia"
+            >
+        </a>
+
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#agenda">Agenda</a>
+            <a href="#agendar">Agendar</a>
+            <a href="admin.html">Barbeiro</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <section class="hero">
+            <div>
+                <span class="badge">King Barbearia</span>
+
+                <h1>
+                    Estilo que dura.
+                    <br>
+                    <b>Horário que respeita você.</b>
+                </h1>
+
+                <p>
+                    Cortes, barba e atendimento premium com agenda inteligente,
+                    atendimento rápido e agendamento em poucos cliques.
+                </p>
+
+                <a class="btn" href="#agendar">Agendar agora</a>
+            </div>
+        </section>
+
+        <section id="servicos">
+            <h2>Nossos serviços</h2>
+            <p class="muted">Escolha o tipo de atendimento que combina com o seu estilo.</p>
+
+            <div id="services" class="cards"></div>
+        </section>
+
+        <section id="agenda">
+            <h2>Agenda disponível</h2>
+            <p class="muted">Selecione uma data para visualizar os horários livres do dia.</p>
+
+            <div class="box">
+                <h3>📅 Escolha a data</h3>
+                <p class="muted">A agenda respeita o horário de funcionamento e a duração de cada serviço.</p>
+
+                <label for="dateAgenda">Data disponível</label>
+                <input id="dateAgenda" type="date">
+            </div>
+
+            <div class="box" style="margin-top: 20px;">
+                <h3>🕐 Horários disponíveis</h3>
+                <p class="muted">Confira as melhores opções para o seu agendamento.</p>
+
+                <div id="agendaSlots" class="times" aria-live="polite">
+                    <p class="muted">Selecione uma data para consultar os horários.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="agendar">
+            <h2>Agende seu horário</h2>
+            <p class="muted">Preencha os dados abaixo e confirme seu atendimento.</p>
+
+            <div class="grid">
+                <form id="form" class="box">
+                    <h3>Seus dados</h3>
+
+                    <label for="name">Nome</label>
+                    <input id="name" name="name" type="text" required minlength="2" maxlength="80" autocomplete="name" placeholder="Seu nome">
+
+                    <label for="phone">WhatsApp</label>
+                    <input id="phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required placeholder="(00) 00000-0000">
+
+                    <label for="service">Serviço</label>
+                    <select id="service" name="service" required>
+                        <option value="">Selecione um serviço</option>
+                    </select>
+
+                    <label for="date">Data</label>
+                    <input id="date" name="date" type="date" required>
+
+                    <label for="time">Horário</label>
+                    <select id="time" name="time" required>
+                        <option value="">Selecione primeiro uma data</option>
+                    </select>
+
+                    <button class="btn" type="submit">Confirmar agendamento</button>
+                    <p id="msg" class="msg" aria-live="polite"></p>
+                </form>
+
+                <div class="box info">
+                    <h3>Como funciona</h3>
+
+                    <p><strong>1.</strong> Escolha o serviço.</p>
+                    <p><strong>2.</strong> Consulte a data disponível.</p>
+                    <p><strong>3.</strong> Escolha um horário livre.</p>
+                    <p><strong>4.</strong> Informe seu WhatsApp.</p>
+                    <p><strong>5.</strong> Confirme o agendamento.</p>
+
+                    <hr>
+
+                    <h3>Seu agendamento</h3>
+                    <p><strong>Serviço:</strong> <span id="summaryService">—</span></p>
+                    <p><strong>Data:</strong> <span id="summaryDate">—</span></p>
+                    <p><strong>Horário:</strong> <span id="summaryTime">—</span></p>
+
+                    <hr>
+
+                    <small>
+                        Seu horário é reservado automaticamente após a confirmação,
+                        mantendo a agenda organizada e evitando conflitos.
+                    </small>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        KING BARBEARIA <span>•</span> Estilo que representa você.
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
